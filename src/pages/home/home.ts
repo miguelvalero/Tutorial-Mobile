@@ -10,7 +10,8 @@ import { ProfesorPage } from '../profesor/profesor';
 export class HomePage {
   nombre: string;
   pass: string;
-  private APIUrl = 'http://127.0.0.1:3000/personas'
+    private APIUrl = 'http://147.83.118.92:3000/api/personas'
+
 
   constructor(public navCtrl: NavController,
     private http: HttpClient) {
