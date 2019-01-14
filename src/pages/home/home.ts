@@ -6,9 +6,18 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  nombre: string;
+  pass: string;
 
   constructor(public navCtrl: NavController) {
 
   }
 
+  Autentificar () {
+    console.log ('Autentificando a ' + this.nombre);
+  }
+
+  Saludar () {
+    console.log ('Hola');
+  }
 }
