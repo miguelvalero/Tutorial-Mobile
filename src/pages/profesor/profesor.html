@@ -15,13 +15,12 @@
 
 <ion-content padding>
   <ion-list>
-      <ion-label>Seleccionar todos </ion-label>
-      <ion-checkbox [(ngModel)]="todos" color='danger'></ion-checkbox>
+    <ion-label>Seleccionar todos </ion-label>
+    <ion-checkbox [(ngModel)]="todos" color='danger'></ion-checkbox>
     <ion-item *ngFor="let persona of lista; let i = index">
-      <ion-label>{{persona.nombre}}</ion-label>
-      <ion-label>{{persona.puntos}}</ion-label>
-      <ion-checkbox [(ngModel)]="seleccionados[i]" color='secondary' [checked]= "todos"></ion-checkbox>
+      <ion-label *ngIf="persona.rol === 'Alumno'" class="ion-2x" >{{ persona.nombre }}<span> <ion-badge id="notifications-badge" color="danger">{{ persona.puntos }}</ion-badge></span></ion-label>
+      <ion-checkbox *ngIf="persona.rol === 'Alumno'" [(ngModel)]="seleccionados[i]" color='secondary' [checked]= "todos"></ion-checkbox>
     </ion-item>
   </ion-list>
-  <button (click)= "Incrementar();" ion-button round color='primary' >Incrementar</button>
+  <h1><ion-icon color = "primary" (click)="Incrementar();" name="add"></ion-icon></h1>
 </ion-content>
