@@ -72,6 +72,7 @@ export class AsignarPage {
     this.DameNoAsignados();
   }
   VerSI () {
+    console.log ('Voy a ver los miembros de este equipo');
     this.DameAsignados();
   }
 

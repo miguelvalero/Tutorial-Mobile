@@ -35,7 +35,8 @@
     <ion-label>Seleccionar todos </ion-label>
     <ion-checkbox [(ngModel)]="todos" color='danger'></ion-checkbox>
     <ion-item *ngFor="let persona of lista; let i = index">
-      <ion-label class="ion-2x" >{{ persona.nombre }}<span> <ion-badge id="notifications-badge" color="danger">{{ persona.puntos }}</ion-badge></span></ion-label>
+      <ion-label class="ion-2x" >{{ persona.nombre }}</ion-label>
+      <ion-badge item-right id="notifications-badge" color="danger">{{ persona.puntos }}</ion-badge>
       <ion-checkbox [(ngModel)]="seleccionados[i]" color='secondary' [checked]= "todos"></ion-checkbox>
     </ion-item>
   </ion-list>

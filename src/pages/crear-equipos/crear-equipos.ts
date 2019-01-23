@@ -34,6 +34,7 @@ export class CrearEquiposPage {
   }
 
   DameEquipos () {
+    console.log ('Busco equipo');
     this.http.get<any[]>(this.APIUrl)
     .subscribe( lista => {
                             this.listaEquipos = lista;

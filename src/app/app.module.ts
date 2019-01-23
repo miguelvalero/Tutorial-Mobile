@@ -12,6 +12,7 @@ import { ProfesorPageModule } from '../pages/profesor/profesor.module';
 import { CrearEquiposPageModule } from '../pages/crear-equipos/crear-equipos.module';
 import { VerEquiposPageModule } from '../pages/ver-equipos/ver-equipos.module';
 import { AsignarPageModule } from '../pages/asignar/asignar.module';
+import { ComposicionPageModule } from '../pages/composicion/composicion.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AsignarPageModule } from '../pages/asignar/asignar.module';
     ProfesorPageModule,
     CrearEquiposPageModule,
     VerEquiposPageModule,
-    AsignarPageModule
+    AsignarPageModule,
+    ComposicionPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

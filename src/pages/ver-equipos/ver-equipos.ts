@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { ComposicionPage } from '../composicion/composicion';
 
 /**
  * Generated class for the VerEquiposPage page.
@@ -43,15 +44,17 @@ export class VerEquiposPage {
     for (var i=0; i< this.listaEquipos.length; i++)
     {
       console.log ('Busco equipo '+i);
-      let URL = this.APIUrlEquipos+"/"+this.listaEquipos[i].id+"/personas?filter[fields][puntos]=true";
+      let URL = this.APIUrlEquipos+"/"+this.listaEquipos[i].id+"/personas?filter[fields][puntos]=true&filter[fields][idEquipo]=true";
       this.http.get<any[]>(URL)
       .subscribe( lista => {
                               console.log ('ya esta aqui');
                               console.log (lista);
-
-                              this.puntos[this.cont++]=this.Sumar(lista);
-                              console.log ('Mas ');
-                              console.log (this.puntos);
+                              if (lista.length >0) {
+                                let pos = lista[0].idEquipo;
+                                this.puntos[pos-1]=this.Sumar(lista);
+                                console.log ('Mas ');
+                                console.log (this.puntos);
+                              }
                             });
 
     }
@@ -63,6 +66,12 @@ export class VerEquiposPage {
     for (var i=0; i< lista.length; i++)
       total= total + lista[i].puntos;
     return total;
+  }
+
+  Mostrar (equipo: any) {
+    console.log ('Vamos a mostrar a '+equipo.id);
+    this.navCtrl.push(ComposicionPage, {id : equipo.id });
+
   }
 
 
