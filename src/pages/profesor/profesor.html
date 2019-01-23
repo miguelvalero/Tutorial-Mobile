@@ -4,13 +4,30 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!-- <ion-header>
 
   <ion-navbar>
     <ion-title>Hola profe</ion-title>
   </ion-navbar>
 
+</ion-header> -->
+<!-- <ion-header>
+<ion-navbar *navbar>
+  <button menuToggle>
+  <ion-icon name="menu"></ion-icon>
+</button>
+  <ion-title>Listado de alumnos</ion-title>
+</ion-navbar>
+</ion-header> -->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lista de alumnos</ion-title>
+  </ion-navbar>
 </ion-header>
+
 
 
 <ion-content padding>
@@ -18,8 +35,8 @@
     <ion-label>Seleccionar todos </ion-label>
     <ion-checkbox [(ngModel)]="todos" color='danger'></ion-checkbox>
     <ion-item *ngFor="let persona of lista; let i = index">
-      <ion-label *ngIf="persona.rol === 'Alumno'" class="ion-2x" >{{ persona.nombre }}<span> <ion-badge id="notifications-badge" color="danger">{{ persona.puntos }}</ion-badge></span></ion-label>
-      <ion-checkbox *ngIf="persona.rol === 'Alumno'" [(ngModel)]="seleccionados[i]" color='secondary' [checked]= "todos"></ion-checkbox>
+      <ion-label class="ion-2x" >{{ persona.nombre }}<span> <ion-badge id="notifications-badge" color="danger">{{ persona.puntos }}</ion-badge></span></ion-label>
+      <ion-checkbox [(ngModel)]="seleccionados[i]" color='secondary' [checked]= "todos"></ion-checkbox>
     </ion-item>
   </ion-list>
   <h1><ion-icon color = "primary" (click)="Incrementar();" name="add"></ion-icon></h1>

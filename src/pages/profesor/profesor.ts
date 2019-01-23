@@ -15,7 +15,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'profesor.html',
 })
 export class ProfesorPage {
-  private APIUrl = 'http://147.83.118.92:3000/api/personas'
+  private APIUrl = 'http://147.83.118.92:3000/api/personas?filter[where][rol]=Alumno';
 
 
   lista: any[];

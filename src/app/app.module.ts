@@ -9,6 +9,9 @@ import { HomePage } from '../pages/home/home';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfesorPageModule } from '../pages/profesor/profesor.module';
+import { CrearEquiposPageModule } from '../pages/crear-equipos/crear-equipos.module';
+import { VerEquiposPageModule } from '../pages/ver-equipos/ver-equipos.module';
+import { AsignarPageModule } from '../pages/asignar/asignar.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ProfesorPageModule } from '../pages/profesor/profesor.module';
     IonicModule.forRoot(MyApp),
     HttpModule,
     HttpClientModule,
-    ProfesorPageModule
+    ProfesorPageModule,
+    CrearEquiposPageModule,
+    VerEquiposPageModule,
+    AsignarPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

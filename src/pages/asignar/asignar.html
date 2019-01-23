@@ -1,0 +1,42 @@
+<!--
+  Generated template for the AsignarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Asignar alumnos al equipo </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h1 ion-text *ngIf="equipo" class="centered" color="secondary">{{equipo.nombre}}</h1>
+
+    <ion-list>
+        <ion-item>
+            <!-- <ion-label color="primary">Inline</ion-label> -->
+            <button ion-button round class="customBtn" (click)= "VerNO();">Sin</button>
+            <button ion-button round item-right class="customBtn" (click)= "VerSI();">En este</button>
+        </ion-item>
+        <br>
+        <ion-title color="primary">Alumnos</ion-title>
+        <!-- <button (click)= "VerNO();" ion-button color="secondary" round>Ver alumnos sin equipo</button>
+        <button (click)= "VerSI();" ion-button color="secondary" round>Ver alumnos de este equipo</button> -->
+        <ion-item *ngFor="let alumno of lista; let i = index">
+          <ion-label *ngIf="alumno.nombre === equipo.capitan" color="primary"  class="ion-2x" >{{ alumno.nombre }}</ion-label>
+          <ion-label *ngIf="alumno.nombre != equipo.capitan"  class="ion-2x" >{{ alumno.nombre }}</ion-label>
+          <ion-checkbox [(ngModel)]="seleccionados[i]" color='secondary'></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+          <!-- <ion-label color="primary">Inline</ion-label> -->
+          <button ion-button round class="customBtn" (click)= "Asignar();">Asignar</button>
+          <button ion-button round item-right class="customBtn" (click)=  "Capitan();">Capitán</button>
+      </ion-item>
+
+
+  </ion-content>

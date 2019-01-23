@@ -1,0 +1,36 @@
+<!--
+  Generated template for the CrearEquiposPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<ion-navbar >
+  <button ion-button menuToggle>
+  <ion-icon  name="menu"></ion-icon>
+</button>
+  <ion-title>Crear equipos</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-item>
+        <!-- <ion-label color="primary">Inline</ion-label> -->
+        <ion-input name="nombre" placeholder="Escribe el nombre" required [(ngModel)]="nombre"></ion-input>
+        <button ion-button round item-right (click)= "CrearEquipo();">Crear</button>
+
+      </ion-item>
+      <br>
+      <br>
+
+  <h1><ion-label color="primary">Lista de equipos</ion-label></h1>
+  <ion-list>
+    <ion-item *ngFor="let equipo of listaEquipos">
+      <button class="customBtn" *ngIf="equipo.capitan === 'pendiente'" ion-button color="danger" (click)= "Asignar(equipo);" > {{ equipo.nombre }}
+      </button>
+      <button class="customBtn" *ngIf="equipo.capitan != 'pendiente'" ion-button color="secondary" (click)= "Asignar(equipo);"> {{ equipo.nombre }}
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

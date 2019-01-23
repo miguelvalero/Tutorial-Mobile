@@ -18,19 +18,19 @@ export class HomePage {
 
   }
 
-  Autentificar () {
-    this.http.get<any>(this.APIUrl + '/' + this.nombre)
-    .subscribe (persona => {
-                              if (persona != null) {
-                                if (persona.rol === 'Profesor') {
-                                    this.navCtrl.push (ProfesorPage);
-                                } else {
-                                  console.log ('hola alumno')
-                                }
-                              }
+  // Autentificar () {
+  //   this.http.get<any>(this.APIUrl + '/' + this.nombre)
+  //   .subscribe (persona => {
+  //                             if (persona != null) {
+  //                               if (persona.rol === 'Profesor') {
+  //                                   this.navCtrl.push (ProfesorPage);
+  //                               } else {
+  //                                 console.log ('hola alumno')
+  //                               }
+  //                             }
 
-                            }
-                );
+  //                           }
+  //               );
 
-  }
+  // }
 }
