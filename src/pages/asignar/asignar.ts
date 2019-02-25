@@ -16,8 +16,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AsignarPage {
   private APIUrlEquipo = 'http://147.83.118.92:3000/api/equipos/';
-  private APIUrlNoAsignados= 'http://147.83.118.92:3000/api/personas?filter[where][and][0][idEquipo]=0&filter[where][and][1][rol]=Alumno';
-  private APIUrlAsignados= 'http://147.83.118.92:3000/api/personas?filter[where][and][1][rol]=Alumno&filter[where][idEquipo]=';
+  private APIUrlNoAsignados= 'http://147.83.118.92:3000/api/personas?filter[where][and][0][idEquipo]=0&filter[where][and][1][rol]=alumno';
+  private APIUrlAsignados= 'http://147.83.118.92:3000/api/personas?filter[where][and][1][rol]=alumno&filter[where][idEquipo]=';
   private APIUrlPut = 'http://147.83.118.92:3000/api/personas';
 
   idEquipo: number;

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { SeleccionadosProvider } from '../../providers/seleccionados/seleccionados';
+
 
 /**
  * Generated class for the ComposicionPage page.
@@ -23,7 +25,7 @@ export class ComposicionPage {
   private APIUrlEquipo = 'http://147.83.118.92:3000/api/equipos/';
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private http: HttpClient) {
+              private http: HttpClient,private proveedor : SeleccionadosProvider) {
 
     this.idEquipo = navParams.get('id');
     console.log ('CONSTRUCTOR mostrar: ' + this.idEquipo);
@@ -52,5 +54,9 @@ export class ComposicionPage {
                             this.DameAlumnos();
                           }
               );
+  }
+
+  Seleccionar (alumno: any) {
+    this.proveedor.nuevoSeleccionado(alumno);
   }
 }

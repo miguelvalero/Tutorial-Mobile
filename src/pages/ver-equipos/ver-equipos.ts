@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { ComposicionPage } from '../composicion/composicion';
+import { SeleccionadosProvider } from '../../providers/seleccionados/seleccionados';
 
 /**
  * Generated class for the VerEquiposPage page.
@@ -20,12 +21,17 @@ export class VerEquiposPage {
   listaEquipos: any[];
   puntos: number[]=[];
   cont: number =0;
+  alumnosSeleccionados: any[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private http: HttpClient) {
+              private http: HttpClient, private proveedor : SeleccionadosProvider) {
   }
 
   ionViewDidLoad() {
     this.DameEquipos();
+    this.alumnosSeleccionados= [];
+    this.proveedor.seleccionados
+    .subscribe ( alumno => this.alumnosSeleccionados.push(alumno));
+
   }
 
   DameEquipos () {

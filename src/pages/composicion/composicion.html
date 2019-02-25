@@ -17,8 +17,8 @@
 
     <ion-list>
         <ion-item *ngFor="let alumno of lista; let i = index">
-          <ion-label  *ngIf="alumno.nombre === equipo.capitan" color="primary"  class="ion-2x" >{{ alumno.nombre }}</ion-label>
-          <ion-label  *ngIf="alumno.nombre != equipo.capitan"  class="ion-2x" >{{ alumno.nombre }}</ion-label>
+          <ion-label (click)= "Seleccionar(alumno)" *ngIf="alumno.nombre === equipo.capitan" color="primary"  class="ion-2x" >{{ alumno.nombre }}</ion-label>
+          <ion-label (click)= "Seleccionar(alumno)" *ngIf="alumno.nombre != equipo.capitan"  class="ion-2x" >{{ alumno.nombre }}</ion-label>
           <ion-badge item-right id="notifications-badge" color="danger">{{ alumno.puntos }}</ion-badge>
         </ion-item>
       </ion-list>

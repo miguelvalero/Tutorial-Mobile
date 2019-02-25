@@ -13,6 +13,7 @@ import { CrearEquiposPageModule } from '../pages/crear-equipos/crear-equipos.mod
 import { VerEquiposPageModule } from '../pages/ver-equipos/ver-equipos.module';
 import { AsignarPageModule } from '../pages/asignar/asignar.module';
 import { ComposicionPageModule } from '../pages/composicion/composicion.module';
+import { SeleccionadosProvider } from '../providers/seleccionados/seleccionados';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ComposicionPageModule } from '../pages/composicion/composicion.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SeleccionadosProvider
   ]
 })
 export class AppModule {}
