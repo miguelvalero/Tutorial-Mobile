@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { ComposicionPage } from '../composicion/composicion';
 import { SeleccionadosProvider } from '../../providers/seleccionados/seleccionados';
-
+import { MostrarSeleccionadosPage} from '../mostrar-seleccionados/mostrar-seleccionados';
 /**
  * Generated class for the VerEquiposPage page.
  *
@@ -80,5 +80,9 @@ export class VerEquiposPage {
 
   }
 
+
+  VerPuntos () {
+    this.navCtrl.push (MostrarSeleccionadosPage,{lista : this.alumnosSeleccionados });
+  }
 
 }

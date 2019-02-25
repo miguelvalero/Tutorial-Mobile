@@ -14,6 +14,8 @@ import { VerEquiposPageModule } from '../pages/ver-equipos/ver-equipos.module';
 import { AsignarPageModule } from '../pages/asignar/asignar.module';
 import { ComposicionPageModule } from '../pages/composicion/composicion.module';
 import { SeleccionadosProvider } from '../providers/seleccionados/seleccionados';
+import { MostrarSeleccionadosPageModule } from '../pages/mostrar-seleccionados/mostrar-seleccionados.module';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { SeleccionadosProvider } from '../providers/seleccionados/seleccionados'
     CrearEquiposPageModule,
     VerEquiposPageModule,
     AsignarPageModule,
-    ComposicionPageModule
+    ComposicionPageModule,
+    MostrarSeleccionadosPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
