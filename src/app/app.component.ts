@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ProfesorPage } from '../pages/profesor/profesor';
 import { CrearEquiposPage } from '../pages/crear-equipos/crear-equipos';
 import {VerEquiposPage } from '../pages/ver-equipos/ver-equipos';
+import { VerAsignaturasPage } from '../pages/ver-asignaturas/ver-asignaturas';
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +31,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Ver alumnos', component: ProfesorPage },
       { title: 'Crear equipos', component: CrearEquiposPage },
-      { title: 'Ver equipos', component: VerEquiposPage }
+      { title: 'Ver equipos', component: VerEquiposPage },
+      { title: 'Ver asignaturas', component: VerAsignaturasPage },
     ];
   }
 

@@ -1,0 +1,24 @@
+<!--
+  Generated template for the VerAsignaturasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lista de asignaturas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let asignatura of lista">
+      <ion-label class="ion-2x" (click)="MostrarMatriculados (asignatura);" >{{ asignatura.nombre }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

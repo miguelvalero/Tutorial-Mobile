@@ -15,6 +15,10 @@ import { AsignarPageModule } from '../pages/asignar/asignar.module';
 import { ComposicionPageModule } from '../pages/composicion/composicion.module';
 import { SeleccionadosProvider } from '../providers/seleccionados/seleccionados';
 import { MostrarSeleccionadosPageModule } from '../pages/mostrar-seleccionados/mostrar-seleccionados.module';
+import { VerAsignaturasPageModule } from '../pages/ver-asignaturas/ver-asignaturas.module';
+import { MatriculadosPageModule } from '../pages/matriculados/matriculados.module';
+import { AsignaturasMatriculadasPageModule} from '../pages/asignaturas-matriculadas/asignaturas-matriculadas.module';
+
 
 
 @NgModule({
@@ -32,7 +36,10 @@ import { MostrarSeleccionadosPageModule } from '../pages/mostrar-seleccionados/m
     VerEquiposPageModule,
     AsignarPageModule,
     ComposicionPageModule,
-    MostrarSeleccionadosPageModule
+    MostrarSeleccionadosPageModule,
+    VerAsignaturasPageModule,
+    MatriculadosPageModule,
+    AsignaturasMatriculadasPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
