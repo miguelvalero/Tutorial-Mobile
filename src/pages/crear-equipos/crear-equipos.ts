@@ -20,6 +20,9 @@ export class CrearEquiposPage {
   listaEquipos: any[];
   nombre: string;
 
+  file: File;
+  logo: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private http: HttpClient) {
   }
@@ -45,12 +48,42 @@ export class CrearEquiposPage {
   }
 
   CrearEquipo () {
-    let equipo = { nombre: this.nombre };
+    let equipo = { "nombre": this.nombre,
+                    "logo": this.file.name};
+
     this.http.post<any>(this.APIUrl, equipo).subscribe (() => this.DameEquipos()
-    )
+    );
+
+
+
+    const formData: FormData = new FormData();
+    formData.append(this.file.name, this.file);
+    // Enviamos la foto a un contenedor que se llama misFotos (que he creado antes en la API)
+    this.http.post('http://localhost:3000/api/imagenes/LogosEquipos/upload', formData)
+    // Cuando se haya subido la imagen guardamos el nombre del fichero en el vector de ficheros
+      .subscribe(() => console.log ('ya esta')
+    );
   }
 
   Asignar (equipo : any) {
     this.navCtrl.push (AsignarPage,{id : equipo.id });
+  }
+
+  ActivarInput () {
+    // Recuperamos el input que estaba invisible y provocamos un click sobre ese input
+    console.log ('Activar inut');
+    document.getElementById ('inp').click();
+  }
+
+  Mostrar ($event) {
+    this.file = $event.target.files[0];
+
+    console.log ('fichero ' +this.file.name)
+    const reader = new FileReader();
+    reader.readAsDataURL(this.file);
+    reader.onload = () => {
+      console.log ('ya');
+      this.logo = reader.result.toString();
+    };
   }
 }

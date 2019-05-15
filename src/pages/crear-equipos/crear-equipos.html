@@ -16,11 +16,16 @@
 <ion-content padding>
 
     <ion-item>
-        <!-- <ion-label color="primary">Inline</ion-label> -->
-        <ion-input name="nombre" placeholder="Escribe el nombre" required [(ngModel)]="nombre"></ion-input>
+        <input #file  id= "inp" type="file" accept='image/*' (change)="Mostrar($event)" style="display:none" >
+        <button ion-button round (click)="ActivarInput();"> Logo </button>
+        <ion-img item-right hight= "40" width="40" [src]="logo"></ion-img>
+    </ion-item>
+    <ion-item>
+
+        <ion-input  name="nombre" placeholder="Escribe el nombre" required [(ngModel)]="nombre"></ion-input>
         <button ion-button round item-right (click)= "CrearEquipo();">Crear</button>
 
-      </ion-item>
+    </ion-item>
       <br>
       <br>
 
