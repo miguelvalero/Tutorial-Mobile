@@ -14,23 +14,34 @@
 </ion-header>
 
 <ion-content padding>
-
+  <form>
     <ion-item>
-        <!-- <ion-label color="primary">Inline</ion-label> -->
-        <ion-input name="nombre" placeholder="Escribe el nombre" required [(ngModel)]="nombre"></ion-input>
-        <button ion-button round item-right (click)= "CrearEquipo();">Crear</button>
+      <input #file id="inp" type="file" accept='image/*' (change)="Mostrar($event)" style="display:none" >
+      <!-- Ponemos un boton con el texto que queramos que lo único que hace es activar el input-->
+      <button ion-button round (click)="ActivarInput();"> Logo </button>
+      <ion-img [src]="image" height='40' width='40'></ion-img>
+    </ion-item>
+    <ion-item>
+      <ion-input name= "nombre" placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <button ion-button round (click)="CrearEquipo();">Crear</button>
+  </form>
 
-      </ion-item>
-      <br>
+
       <br>
 
   <h1><ion-label color="primary">Lista de equipos</ion-label></h1>
   <ion-list>
-    <ion-item *ngFor="let equipo of listaEquipos">
+
+    <ion-item *ngFor="let equipo of listaEquipos; let i=index">
+
       <button class="customBtn" *ngIf="equipo.capitan === 'pendiente'" ion-button color="danger" (click)= "Asignar(equipo);" > {{ equipo.nombre }}
       </button>
       <button class="customBtn" *ngIf="equipo.capitan != 'pendiente'" ion-button color="secondary" (click)= "Asignar(equipo);"> {{ equipo.nombre }}
       </button>
+      <!-- Muestro el logo solo si el equipo tiene logo. Lo saco del vector de logos -->
+      <img item-right *ngIf="equipo.logo !=null" [src]="logos[i]" height='40' width='40'/>
+
     </ion-item>
   </ion-list>
 </ion-content>
