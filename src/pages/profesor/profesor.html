@@ -18,7 +18,7 @@
     <ion-label>Seleccionar todos </ion-label>
     <ion-checkbox [(ngModel)]="todos" color='danger'></ion-checkbox>
     <ion-item *ngFor="let persona of lista; let i = index">
-      <ion-label *ngIf="persona.rol === 'Alumno'" class="ion-2x" >{{ persona.nombre }}<span> <ion-badge id="notifications-badge" color="danger">{{ persona.puntos }}</ion-badge></span></ion-label>
+      <ion-label *ngIf="persona.rol === 'Alumno'" class="ion-2x" >{{ persona.nombre }}<span> <ion-badge id="notifications-badge" color="secondary">{{ persona.puntos }}</ion-badge></span></ion-label>
       <ion-checkbox *ngIf="persona.rol === 'Alumno'" [(ngModel)]="seleccionados[i]" color='secondary' [checked]= "todos"></ion-checkbox>
     </ion-item>
   </ion-list>
